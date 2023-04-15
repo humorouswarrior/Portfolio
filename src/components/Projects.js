@@ -9,7 +9,27 @@ import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-  const projects = [
+  const projects1 = [
+    {
+      title: "TextUtils",
+      description: "A utility for all your text based needs",
+      imgUrl: projImg1,
+      ProjLink:"https://textu-7813c.firebaseapp.com/",
+    },
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: projImg2,
+    },
+    {
+      title: "Business Startup",
+      description: "Design & Development",
+      imgUrl: projImg3,
+    },
+   
+  ];
+
+  const projects2 = [
     {
       title: "Business Startup",
       description: "Design & Development",
@@ -25,6 +45,10 @@ export const Projects = () => {
       description: "Design & Development",
       imgUrl: projImg3,
     },
+   
+  ];
+
+  const projects3 = [
     {
       title: "Business Startup",
       description: "Design & Development",
@@ -40,6 +64,7 @@ export const Projects = () => {
       description: "Design & Development",
       imgUrl: projImg3,
     },
+   
   ];
 
   return (
@@ -68,7 +93,7 @@ export const Projects = () => {
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
-                          projects.map((project, index) => {
+                          projects1.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -79,11 +104,33 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="second">
+                    <Row>
+                        {
+                          projects2.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Row>
+                        {
+                          projects3.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
