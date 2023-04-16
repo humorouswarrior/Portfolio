@@ -3,6 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import ProjText from "../assets/img/ProjText.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -13,12 +14,12 @@ export const Projects = () => {
     {
       title: "TextUtils",
       description: "A utility for all your text based needs",
-      imgUrl: projImg1,
+      imgUrl: ProjText,
       ProjLink:"https://textu-7813c.firebaseapp.com/",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "NewsApp",
+      description: "An app that uses NEWS-API to bring you the latest ongoings from around the globe, categorised",
       imgUrl: projImg2,
     },
     {
@@ -72,7 +73,7 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
+            <TrackVisibility once = {true} >
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
