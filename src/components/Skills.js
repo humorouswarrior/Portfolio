@@ -3,8 +3,16 @@ import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
 import colorSharp from "../assets/img/color-sharp.png"
+import skills from "../assets/img/skills.png"
+
+import react from "../assets/img/react.png"
+import node from "../assets/img/nodejs.png"
+import mongo from "../assets/img/mongodb.png"
+import boot from "../assets/img/bootstrap.png"
+import cpp from "../assets/img/cpp.png"
+import py from "../assets/img/python.png"
+import js from "../assets/img/JavaScript.png"
 
 export const Skills = () => {
   const responsive = {
@@ -33,31 +41,36 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                        <h2>Tech Stack</h2>
+                        <p>These are the technologies I have worked with as a Computer Science student. I am consistently trying to improve my skills in all of these and I am open to explore further.</p>
+                        <Carousel responsive={responsive} autoPlay = {true} autoPlaySpeed={2000} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image1" />
-                                <h5>Web Development</h5>
+                                <img src={react} alt="Image1" />
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image2" />
-                                <h5>Brand Identity</h5>
+                                <img src={node} alt="Image2" />
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image3" />
-                                <h5>Logo Design</h5>
+                                <img src={mongo} alt="Image3" />
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image4" />
-                                <h5>Web Development</h5>
+                                <img src={cpp} alt="Image4" />
+                            </div>
+                            <div className="item">
+                                <img src={py} alt="Image4" />
+                            </div>
+                            <div className="item">
+                                <img src={js} alt="Image4" />
+                            </div>
+                            <div className="item">
+                                <img src={boot} alt="Image4" />
                             </div>
                         </Carousel>
                     </div>
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image5" />
+        <img className="background-image-left" src={skills} alt="Image5" />
     </section>
   )
 }

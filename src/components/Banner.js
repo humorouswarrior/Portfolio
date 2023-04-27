@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import headerimg2 from "../assets/img/header-img2.png";
 
+
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -63,7 +64,7 @@ export const Banner = () => {
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Vaibhav, a`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ "Web Developer", "Software Engineer", "Tech Enthusiast!"]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <p>As a fresher MERN Web Developer and Software Engineer, my career objective is to leverage my technical skills and passion for problem-solving to contribute to the success of a dynamic organization in the IT industry.  I am eager to learn new technologies in software development to keep up with the constantly evolving field. Ultimately, my goal is to build a fulfilling career by delivering innovative solutions that exceed client expectations and drive business growth.</p>
                   <HashLink to='#connect'>
                   <button>Let's Connect <ArrowRightCircle size={25} /></button>
                   </HashLink>
