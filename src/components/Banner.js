@@ -8,7 +8,7 @@ import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
-
+import headerimg2 from "../assets/img/header-img2.png";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -74,7 +74,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={headerimg2} alt="Header Img"/>
                 </div>}
             </TrackVisibility>
           </Col>
