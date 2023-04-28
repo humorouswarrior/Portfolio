@@ -1,9 +1,7 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import colorSharp from "../assets/img/color-sharp.png"
+
 import skills from "../assets/img/skills.png"
 
 import react from "../assets/img/react.png"
@@ -43,7 +41,7 @@ export const Skills = () => {
                     <div className="skill-bx wow zoomIn">
                         <h2>Tech Stack</h2>
                         <p>These are the technologies I have worked with as a Computer Science student. I am consistently trying to improve my skills in all of these and I am open to explore further.</p>
-                        <Carousel responsive={responsive} autoPlay = {true} autoPlaySpeed={2000} infinite={true} className="owl-carousel owl-theme skill-slider">
+                        <Carousel responsive={responsive} autoPlay = {true} autoPlaySpeed={1500} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={react} alt="Image1" />
                             </div>

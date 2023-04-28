@@ -65,11 +65,12 @@ export const Projects = () => {
       description: "Design & Development",
       imgUrl: projImg3,
     },
-   
+    
   ];
-
+  
   return (
     <section className="project" id="projects">
+      <img className="background-image-right" src={colorSharp2}></img>
       <Container>
         <Row>
           <Col size={12}>
@@ -141,7 +142,6 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
     </section>
   )
 }
