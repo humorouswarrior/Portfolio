@@ -64,7 +64,7 @@ export const Banner = () => {
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Vaibhav, a`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ "Web Developer", "Software Engineer", "Tech Enthusiast!"]'><span className="wrap">{text}</span></span></h1>
-                  <p>As a fresher MERN Web Developer and Software Engineer, my career objective is to leverage my technical skills and passion for problem-solving to contribute to the success of a dynamic organization in the IT industry.  I am eager to learn new technologies in software development to keep up with the constantly evolving field. Ultimately, my goal is to build a fulfilling career by delivering innovative solutions that exceed client expectations and drive business growth.</p>
+                  <p>My career objective is to work for an organisation where my technical and social skills can be leveraged to contribute to the success of an organisation which provides me with the opportunity to improve my skills and grow my career further, whilst changing lives for the better. </p>
                   <HashLink to='#connect'>
                   <button>Let's Connect <ArrowRightCircle size={25} /></button>
                   </HashLink>
