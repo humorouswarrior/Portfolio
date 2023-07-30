@@ -1,21 +1,25 @@
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
+const bodyParser = (require('body-parser'));
 const nodemailer = require("nodemailer");
 require('dotenv').config();
+const path = require('path');
 
 // server used to send send emails
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.resolve(__dirname, '../build')));
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
+app.use(bodyParser.json())
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "khandelwalv971@gmail.com",
-    pass: "tbjhwdxumvybdnki"          // this app pass will change everytime you change gmail pass. beware.  
+    user: process.env.EMAIL_ADDRESS,
+    pass: process.env.EMAIL_PASS          // this app pass will change everytime you change gmail pass. beware.  
   },
 });
 
@@ -49,3 +53,7 @@ router.post("/contact", (req, res) => {
     }
   });
 });
+
+app.get('*', (req,res) => {
+  res.sendFile(path.resolve(__dirname, '../build', 'index.html'));
+})
