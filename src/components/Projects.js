@@ -4,10 +4,14 @@ import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import ProjText from "../assets/img/ProjText.png";
+import projNews from "../assets/img/projNews.png";
+import projNotes from "../assets/img/projNotes.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-
+import { Exp } from "../components/Exp";
+import essentia from "../assets/img/essentialogo.png";
+import food from "../assets/img/foodorder.jpg";
 export const Projects = () => {
 
   const projects1 = [
@@ -20,52 +24,41 @@ export const Projects = () => {
     {
       title: "NewsApp",
       description: "An app that uses NEWS-API to bring you the latest ongoings from around the globe, categorised",
-      imgUrl: projImg2,
+      imgUrl: projNews,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "MyNotes",
+      description: "Take YOUR notes on the go!",
+      imgUrl: projNotes,
     },
    
   ];
 
   const projects2 = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Food Ordering App",
+      description: "I'm craving it!",
+      imgUrl: food,
     },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
+    // {
+    //   title: "Business Startup",
+    //   description: "Design & Development",
+    //   imgUrl: projImg2,
+    // },
+    // {
+    //   title: "Business Startup",
+    //   description: "Design & Development",
+    //   imgUrl: projImg3,
+    // },
    
   ];
 
   const projects3 = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+        title: "Internship",
+        description: "@Essentia Softserv",
+        imgUrl: essentia,
     },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    
   ];
   
   return (
@@ -78,7 +71,6 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> */}
                 <p>These projects depict my entire journey as a Web Developer so far. I try to learn things consistently in order to add new things in this segment. Looking forward to making my tech stack even bigger and stacking my best works here!</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
@@ -89,7 +81,7 @@ export const Projects = () => {
                       <Nav.Link eventKey="second">Tab 2</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="third">Experience</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -125,12 +117,12 @@ export const Projects = () => {
                     <Row>
                         {
                           projects3.map((project, index) => {
-                            return (
+                            return <>
                               <ProjectCard
                                 key={index}
                                 {...project}
                                 />
-                            )
+                              </>
                           })
                         }
                       </Row>
