@@ -1,15 +1,11 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
 import ProjText from "../assets/img/ProjText.png";
 import projNews from "../assets/img/projNews.png";
 import projNotes from "../assets/img/projNotes.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import { Exp } from "../components/Exp";
 import essentia from "../assets/img/essentialogo.png";
 import food from "../assets/img/foodorder.jpg";
 export const Projects = () => {
@@ -63,7 +59,7 @@ export const Projects = () => {
   
   return (
     <section className="project" id="projects">
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" alt = "" src={colorSharp2}></img>
       <Container>
         <Row>
           <Col size={12}>
