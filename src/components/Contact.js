@@ -26,20 +26,35 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code === 200) {
-      setStatus({ success: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+    setStatus({});
+
+    const apiUrl = process.env.REACT_APP_API_URL || "/contact";
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(formDetails),
+        mode: "cors",
+      });
+
+      const result = await response.json().catch(() => null);
+      setButtonText("Send");
+      setFormDetails(formInitialDetails);
+
+      if (response.ok && result?.code === 200) {
+        setStatus({ success: true, message: 'Message sent successfully' });
+        return;
+      }
+
+      const message = result?.status || result?.error || 'Something went wrong, please try again later.';
+      setStatus({ success: false, message });
+    } catch (error) {
+      console.error('Contact submit error:', error);
+      setButtonText("Send");
+      setStatus({ success: false, message: 'Unable to send message. Please try again later.' });
     }
   };
 

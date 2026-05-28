@@ -1,35 +1,67 @@
 # Personal Portfolio Website in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+This project is a React front end with an Express backend for sending contact form emails.
 
 Built using:
 
 - Front-end library: React
 - CSS framework: React-bootstrap
 - CSS animations library: Animate.css
+- Backend: Express + Nodemailer
 
-In the /personal-portfolio, you can run:
+## Local setup
 
-### `npm start`
+1. Install dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. For front-end development only:
 
-### `npm test`
+```bash
+npm run start:client
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open http://localhost:3000 to view the client app.
 
-### `npm run build`
+3. For production-style serving with the Express backend:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build
+npm run start:server
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open http://localhost:5000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Environment variables
+
+Copy `.env.example` to `.env` and set your credentials before using the contact form:
+
+```bash
+cp .env.example .env
+```
+
+The `.env` file is ignored by Git.
+
+## Available scripts
+
+- `npm run start:client` — run the React development server
+- `npm run build` — build the React app into `build/`
+- `npm run start:server` — serve the production build with Express
+- `npm start` — same as `npm run start:server`
+- `npm test` — run the test suite
+
+## Deployment
+
+This repository can be deployed to any Node.js hosting platform. Typical deploy steps:
+
+1. Push your repo to a Git provider (GitHub/GitLab/Bitbucket).
+2. Configure your host to run:
+   - Build command: `npm install && npm run build`
+   - Start command: `npm run start:server`
+3. Add environment variables on the host:
+   - `EMAIL_ADDRESS`
+   - `EMAIL_PASS`
+
+The Express server reads `process.env.PORT` (falls back to `5000` locally). Do not commit secrets; set them in the host's dashboard.
